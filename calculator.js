@@ -190,6 +190,11 @@ equals.addEventListener("click", operation);
 function operation(){
     if(a == "" || b == "" || op == "") return;
 
+    if(op == "/" && b == "0")
+    {
+        alert("Can't divide by 0!");
+        return;
+    }
     a = operate(+a,+b,op);
     if(!Number.isInteger(a))a = a.toFixed(6);
     b = op = "";
